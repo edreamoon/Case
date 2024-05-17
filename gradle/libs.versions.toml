@@ -22,6 +22,7 @@ appcompat = "1.6.1"
 material = "1.9.0"
 glide = "4.13.2"
 okhttp = "4.9.1"
+activity = "1.8.0"
 
 
 
@@ -54,6 +55,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 
 
 [plugins]
