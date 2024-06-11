@@ -1,4 +1,4 @@
-package com.ccnio.ware.jetpack.room
+package com.ccino.demo.jetpack.room
 
 import android.util.Log
 import androidx.room.Database
@@ -6,6 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.ccino.demo.app
+import com.ccnio.ware.jetpack.room.Trigger
+import com.ccnio.ware.jetpack.room.TriggerDao
+import com.ccnio.ware.jetpack.room.UserDao
+import com.ccnio.ware.jetpack.room.UserEntity
 
 /**
  * Created by ccino on 2021/10/12.

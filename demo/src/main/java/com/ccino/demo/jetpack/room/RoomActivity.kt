@@ -7,10 +7,8 @@ import com.ccino.demo.R
 import com.ccino.demo.databinding.ActivityRoomBinding
 import com.ccino.demo.jetpack.viewbinding.viewBinding
 import com.ccnio.ware.jetpack.room.Address
-import com.ccnio.ware.jetpack.room.RoomDb
 import com.ccnio.ware.jetpack.room.UserEntity
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
 import kotlin.concurrent.thread
 
 /**

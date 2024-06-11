@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 灰色背景+不拉伸的占位图 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 灰色圆角背景 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#e2e2e2" />
+        </shape>
+    </item>
+
+    <!-- 中心图标 -->
+    <item>
+        <bitmap
+            android:antialias="true"
+            android:filter="true"
+            android:gravity="center"
+            android:src="@drawable/ic_launcher_foreground" />
+    </item>
+</layer-list>

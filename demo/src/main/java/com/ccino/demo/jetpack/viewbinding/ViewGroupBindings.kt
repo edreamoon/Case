@@ -13,7 +13,6 @@ import com.ccino.demo.jetpack.viewbinding.LazyViewBindingProperty
 import com.ccino.demo.jetpack.viewbinding.LifecycleViewBindingProperty
 import com.ccino.demo.jetpack.viewbinding.ViewBindingProperty
 import com.ccino.demo.jetpack.viewbinding.requireViewByIdCompat
-import com.ccnio.ware.jetpack.viewbinding.*
 import com.ware.jetpack.viewbinding.*
 
 @PublishedApi
