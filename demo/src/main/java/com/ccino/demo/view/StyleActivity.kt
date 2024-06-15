@@ -19,16 +19,16 @@ private const val TAG = "StyleActivity"
  * 为每个 view 添加额外的 attrs
  */
 class StyleActivity : ComponentActivity() {
-    private lateinit var binding: LayoutBlurViewBinding
+    private lateinit var binding: ActivityStyleBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = LayoutBlurViewBinding.inflate(layoutInflater)
+        binding = ActivityStyleBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupBlurView()
-        binding.scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            binding.blurView.invalidate()
-        }
+//        setupBlurView()
+//        binding.scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+//            binding.blurView.invalidate()
+//        }
 
 //        binding.blurView.postDelayed({
 //            binding.blurView.refreshBG(binding.coverView)
@@ -41,20 +41,20 @@ class StyleActivity : ComponentActivity() {
 //        }
     }
 
-    private fun setupBlurView() {
-        val radius = 20f
-
-        // 获取根视图
-        val rootView = binding.backgroundImageView.parent as ViewGroup
-
-        // 设置背景，如果没有背景则使用透明背景
-        val windowBackground: Drawable = binding.backgroundImageView.drawable
-            ?: ContextCompat.getDrawable(this, android.R.color.transparent)!!
-
-        binding.blurView.setupWith(rootView)
-//            .setFrameClearDrawable(windowBackground)
-            .setBlurRadius(radius)
-            .setOverlayColor(-0x80000000)
-
-    }
+//    private fun setupBlurView() {
+//        val radius = 20f
+//
+//        // 获取根视图
+//        val rootView = binding.backgroundImageView.parent as ViewGroup
+//
+//        // 设置背景，如果没有背景则使用透明背景
+//        val windowBackground: Drawable = binding.backgroundImageView.drawable
+//            ?: ContextCompat.getDrawable(this, android.R.color.transparent)!!
+//
+//        binding.blurView.setupWith(rootView)
+////            .setFrameClearDrawable(windowBackground)
+//            .setBlurRadius(radius)
+//            .setOverlayColor(-0x80000000)
+//
+//    }
 }

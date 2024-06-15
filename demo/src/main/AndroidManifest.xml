@@ -16,7 +16,7 @@
             android:name=".view.EmptyActivity"
             android:exported="false" />
         <activity
-            android:name=".view.StyleActivity"
+            android:name=".view.WidgetActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
