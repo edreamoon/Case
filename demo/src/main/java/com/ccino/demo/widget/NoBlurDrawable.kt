@@ -8,14 +8,15 @@ import android.graphics.PixelFormat
 import android.graphics.drawable.Drawable
 import android.util.Log
 
-private const val TAG = "BlurDrawable"
-class BlurDrawable(private val color: Int, private val blurRadius: Float) : Drawable() {
+private const val TAG = "NoBlurDrawable"
+
+class NoBlurDrawable(private val color: Int, private val blurRadius: Float) : Drawable() {
 
     private val paint = Paint().apply {
         isAntiAlias = true
         style = Paint.Style.FILL
-        color = this@BlurDrawable.color
-        maskFilter = BlurMaskFilter(blurRadius, BlurMaskFilter.Blur.NORMAL)
+        color = this@NoBlurDrawable.color
+//        maskFilter = BlurMaskFilter(blurRadius, BlurMaskFilter.Blur.NORMAL)
     }
 
     override fun draw(canvas: Canvas) {

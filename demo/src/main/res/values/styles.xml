@@ -14,4 +14,9 @@
         <item name="android:textColor">@color/common_black</item>
         <item name="android:gravity">center</item>
     </style>
+
+
+    <declare-styleable name="BlurView">
+        <attr name="blurOverlayColor" format="color"/>
+    </declare-styleable>
 </resources>
