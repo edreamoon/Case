@@ -16,6 +16,9 @@
             android:name=".view.EmptyActivity"
             android:exported="false" />
         <activity
+            android:name=".sdk.SecondActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.WidgetActivity"
             android:exported="true">
             <intent-filter>

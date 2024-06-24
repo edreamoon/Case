@@ -1,7 +1,5 @@
 package com.ccino.demo.view
 
-import android.graphics.RenderEffect
-import android.graphics.Shader
 import android.os.Bundle
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
@@ -20,10 +18,10 @@ class WidgetActivity : AppCompatActivity() {
     }
 
     private fun blurView() {
-        //RenderEffect android 12及以上才可以，radius越大越模糊
+      /*  //RenderEffect android 12及以上才可以，radius越大越模糊
         val blurView = binding.blurView
         blurView.setRenderEffect(RenderEffect.createBlurEffect(20f, 20f, Shader.TileMode.CLAMP))
-
+*/
         // 全兼容blur：view能实时(滑动时)根据背景来blur
         val rootView = window?.decorView as? ViewGroup ?: return
         binding.blurBg.setupWith(rootView)
