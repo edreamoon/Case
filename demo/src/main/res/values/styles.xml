@@ -15,7 +15,16 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabPaddingBottom">20dp
+        </item> <!-- Set the padding to adjust the space between text and indicator -->
+    </style>
 
+    <style name="SqTabText">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
     <declare-styleable name="BlurView">
         <attr name="blurOverlayColor" format="color"/>
     </declare-styleable>

@@ -19,7 +19,7 @@
             android:name=".sdk.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".view.WidgetActivity"
+            android:name=".view.TabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
