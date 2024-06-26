@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--height 下划线高度
+        gravity 下划线位置
+        width 下划线固定宽度; 或者 left/top: 下划线两边跟item文字相对距离
+        corners 下划线圆角
+    -->
     <item
+        android:width="5dp"
         android:height="2.5dp"
-        android:gravity="bottom|center"
-        android:width="60dp">
+        android:gravity="bottom|center">
         <shape>
             <corners android:radius="2dp" />
         </shape>
     </item>
+
+<!-- or
+    <item
+        android:width="45dp"
+        android:height="2.5dp"
+        android:gravity="bottom|center">
+        <shape>
+            <corners android:radius="2dp" />
+        </shape>
+    </item>-->
 </layer-list>
