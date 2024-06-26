@@ -6,23 +6,57 @@
     android:layout_height="match_parent"
     tools:ignore="MissingConstraints,MissingDefaultResource">
 
-    <ImageView
-        android:id="@+id/cover_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/gc_girl" />
-
-<!--    使用自定义 attr-->
+    <!--    使用自定义 attr-->
     <TextView
-        android:id="@+id/attr"
+        android:id="@+id/bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello"
-        android:textColor="@color/teal_200"
-        app:customTextSize="16sp" />
+        android:layout_marginTop="60dp"
+        android:text="你好丫"
+        android:textColor="@color/black"
+        app:customTextSize="16sp"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/bold1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好丫"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/bold" />
 
+    <TextView
+        android:id="@+id/bold2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好丫"
+        android:textColor="@color/black"
+        android:textFontWeight="800"
+        app:layout_constraintTop_toBottomOf="@id/bold1" />
 
+    <TextView
+        android:id="@+id/bold3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好丫"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/bold2" />
 
+    <TextView
+        android:id="@+id/bold4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你好丫"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/bold3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/align_view"
+        app:layout_constraintTop_toBottomOf="@id/bold4"
+        android:gravity="fill_horizontal"
+        android:justificationMode="inter_word"
+        android:text="小溪是个名字，一名拥有强势御姐气质的独立女性，她在都市的森林中犹如一道不屈的光芒。她的眼神坚定, 行动总能在困境中找到新的出路。午后，她身着轻盈的白裙，正静静地看书，你靠近时，她抬起头，微笑着向你打招呼，这一刻，时间仿佛凝固，她的笑容在春日的阳光下更加灿烂，她在校园中如同一朵盛开的樱花，受到了众人的喜爱与赞美。周围是落英缤纷的樱花，空气中弥漫着淡淡的花香。"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
