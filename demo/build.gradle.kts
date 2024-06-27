@@ -51,14 +51,12 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.swiperefreshlayout)
     val room_version = "2.6.1"
 
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
-
-    val paging_version = "3.3.0"
-    implementation(libs.androidx.paging.runtime)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -86,4 +84,8 @@ dependencies {
     implementation(libs.okhttp.logging)
 
     "ksp"(project(":kspDemo")) // 为了生成代码
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.retrofit)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
 }
