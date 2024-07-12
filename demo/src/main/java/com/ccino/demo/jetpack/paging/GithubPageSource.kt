@@ -18,6 +18,7 @@ class GithubPageSource : PagingSource<Int, RepositoryItem>() {
         return try {
             val page = params.key ?: 1
             val pageSize = params.loadSize
+            Log.d(TAG, "load: pageSize=$pageSize")
             val rspRepository = githubApi.getRepositories(page, pageSize)
             val items = rspRepository.items
             val preKey = if (page > 1) page - 1 else null

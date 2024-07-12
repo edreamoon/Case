@@ -17,7 +17,7 @@ interface GithubService {
 
         val githubApi: GithubService by lazy {
             val retrofit = retrofit2.Retrofit.Builder()
-                .client(OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)).build())
+                .client(OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC)).build())
                 .baseUrl(BASE_URL)
                 .addConverterFactory(
                     MoshiConverterFactory.create(
