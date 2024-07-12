@@ -22,7 +22,11 @@ class PagingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val mainViewModel = ViewModelProvider(this)[PageVM::class.java]
-        binding.recyclerView.adapter = mAdapter
+//        binding.recyclerView.adapter = mAdapter // 无 footer/header
+        binding.recyclerView.adapter = mAdapter.withLoadStateFooter( // 添加加载footer
+            footer = ListLoadingStateAdapter { mAdapter.retry() }
+        )
+
         lifecycleScope.launch {
             mainViewModel.getPagingData().collect { pagingData ->
                 mAdapter.submitData(pagingData)

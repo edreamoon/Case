@@ -13,9 +13,9 @@ object Repository {
         return Pager(
             /**
              * initialLoadSize：第一页加载的条数，默认是 pageSize*3
-             * prefetchDistance：倒数第几个时加载下页
+             * prefetchDistance：倒数第几个时加载下页.either placeholders must be enabled, or prefetch distance must be > 0
              */
-            config = PagingConfig(PAGE_SIZE, enablePlaceholders = false, initialLoadSize = PAGE_SIZE, prefetchDistance = 5),
+            config = PagingConfig(PAGE_SIZE, enablePlaceholders = false, initialLoadSize = PAGE_SIZE, prefetchDistance = 1),
             pagingSourceFactory = { GithubPageSource() }
         ).flow
     }
