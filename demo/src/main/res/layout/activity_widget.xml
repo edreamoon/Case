@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    tools:ignore="MissingConstraints"
+    android:background="@android:color/darker_gray"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.WidgetActivity">
+    tools:context=".view.WidgetActivity"
+    tools:ignore="MissingConstraints">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/gc_girl" />
+        android:src="@drawable/gc_girl"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/blurView"
@@ -44,52 +46,73 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mb1"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="mb normal"
         android:textAllCaps="false"
-        app:layout_constraintStart_toEndOf="@id/blurView"
-        android:layout_height="wrap_content" />
+        app:layout_constraintStart_toEndOf="@id/blurView" />
 
     <!--    padding 为0 去除各种内边距-->
     <!--    insetTop、insetBottom 去除外边距-->
     <!--    app:backgroundTint 设置背景颜色-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mb2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:text="icon/corner/stroke"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="5dp"
         app:icon="@mipmap/ic_launcher"
         app:iconGravity="textStart"
         app:iconPadding="2dp"
-        android:layout_width="150dp"
-        android:padding="0dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:backgroundTint="@color/black"
-        android:text="icon/corner/stroke"
-        android:gravity="center"
-        android:textAllCaps="false"
-        app:cornerRadius="5dp"
-        app:strokeWidth="2dp"
-        app:strokeColor="@color/teal_200"
         app:layout_constraintStart_toEndOf="@id/mb1"
-        android:layout_height="50dp" />
+        app:strokeColor="@color/teal_200"
+        app:strokeWidth="2dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mb3"
-        android:text="text"
-        app:backgroundTint="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:textAllCaps="false"
-        android:padding="0dp"
-        app:strokeWidth="2dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        app:strokeColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/mb1"
+        android:padding="0dp"
+        android:text="text"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="@id/mb1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintTop_toBottomOf="@id/mb1"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
 
     <com.ccino.demo.view.ColorChangingDotsView
-        app:layout_constraintTop_toBottomOf="@id/bg_blur_view"
+        android:id="@+id/dot_view"
         android:layout_width="200dp"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@id/bg_blur_view" />
+
+    <com.ccino.demo.widget.HeartFillView
+        android:id="@+id/heartFillView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.ccino.demo.widget.VerticalDashedLineView
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dialog"
+        android:layout_width="wrap_content"
+        android:text="dialog"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

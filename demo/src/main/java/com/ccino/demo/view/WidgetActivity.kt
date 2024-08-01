@@ -15,13 +15,17 @@ class WidgetActivity : AppCompatActivity() {
         binding = ActivityWidgetBinding.inflate(layoutInflater)
         setContentView(binding.root)
         blurView()
+        binding.heartFillView.setProgress(0.1f)
+        binding.mb3.setOnClickListener { binding.heartFillView.setProgress(-1f) }
+        binding.mb1.setOnClickListener { binding.heartFillView.setProgress(0f) }
+        binding.mb2.setOnClickListener { binding.heartFillView.setProgress(0.5f) }
     }
 
     private fun blurView() {
-      /*  //RenderEffect android 12及以上才可以，radius越大越模糊
-        val blurView = binding.blurView
-        blurView.setRenderEffect(RenderEffect.createBlurEffect(20f, 20f, Shader.TileMode.CLAMP))
-*/
+        /*  //RenderEffect android 12及以上才可以，radius越大越模糊
+          val blurView = binding.blurView
+          blurView.setRenderEffect(RenderEffect.createBlurEffect(20f, 20f, Shader.TileMode.CLAMP))
+  */
         // 全兼容blur：view能实时(滑动时)根据背景来blur
         val rootView = window?.decorView as? ViewGroup ?: return
         binding.blurBg.setupWith(rootView)
@@ -29,6 +33,7 @@ class WidgetActivity : AppCompatActivity() {
         binding.blurBg.outlineProvider = ViewOutlineProvider.BACKGROUND
         binding.blurBg.setClipToOutline(true)
 //        blurBgView.setupWith(rootView)
-
+        binding.dialog.setOnClickListener {
+        }
     }
 }
