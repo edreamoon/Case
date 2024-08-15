@@ -7,7 +7,7 @@
     tools:ignore="MissingConstraints">
 
     <TextView
-        app:layout_behavior=".widget.nested.FollowBehavior"
+        app:layout_behavior=".widget.FollowBehavior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="观察者" />

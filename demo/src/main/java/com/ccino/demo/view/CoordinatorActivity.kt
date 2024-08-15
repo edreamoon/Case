@@ -1,15 +1,14 @@
-package com.ware.widget.nested
+package com.ccino.demo.view
 
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import com.ccino.demo.R
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
-import com.ware.R
 import com.ware.widget.recycler.MoreAdapter
-import kotlinx.android.synthetic.main.activity_coordinator.*
-import kotlinx.android.synthetic.main.activity_coordinator_appbar.*
-import kotlinx.android.synthetic.main.activity_scrolling.*
 
 /**
  * https://www.jianshu.com/p/7caa5f4f49bd
@@ -25,8 +24,8 @@ class CoordinatorActivity : AppCompatActivity() {
 
     private fun scrollingActivity() {
         setContentView(R.layout.activity_scrolling)
-        setSupportActionBar(toolbar)
-        fab.setOnClickListener { view ->
+        setSupportActionBar(findViewById(R.id.toolbar))
+        findViewById<View>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
@@ -78,7 +77,7 @@ class CoordinatorActivity : AppCompatActivity() {
         /**
          *监听AppBarLayout滚动: 上滑 0->-toolBarHeight; 下滑-toolBarHeight->0
          */
-        appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, offset ->
+        findViewById<AppBarLayout>(R.id.appBar).addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, offset ->
 //            appBarLayout.totalScrollRange
 //            val toolBarHeight = toolBar.height
 //            Log.d("CoordinatorActivity", "coordinatorAndAppBar: $offset")
@@ -95,7 +94,7 @@ class CoordinatorActivity : AppCompatActivity() {
             list.add(i.toString())
         }
         adapter.setData(list)
-        recyclerView.adapter = adapter
+        findViewById<RecyclerView>(R.id.recyclerView).adapter = adapter
     }
 
     /**
@@ -103,7 +102,7 @@ class CoordinatorActivity : AppCompatActivity() {
      */
     private fun coordinatorLayout() {
         setContentView(R.layout.activity_coordinator)
-        btn.setOnTouchListener { v, event ->
+        findViewById<View>(R.id.btn).setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_MOVE) {
                 v.x = event.rawX - v.width / 2
                 v.y = event.rawY - v.height / 2

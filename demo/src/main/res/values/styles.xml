@@ -14,7 +14,8 @@
         <item name="android:textColor">@color/common_black</item>
         <item name="android:gravity">center</item>
     </style>
-
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorHeight">4dp</item>
         <item name="tabPaddingBottom">20dp

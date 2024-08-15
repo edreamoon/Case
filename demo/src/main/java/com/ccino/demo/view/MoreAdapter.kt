@@ -4,10 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.ware.R
-import kotlinx.android.synthetic.main.layout_header.view.*
-import kotlinx.android.synthetic.main.layout_recycler.view.*
+import com.ccino.demo.R
 
 /**
  * Created by jianfeng.li on 20-1-4.
@@ -38,10 +37,10 @@ class MoreAdapter(val context: Context, val hasHeader: Boolean) : RecyclerView.A
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is ItemHolder -> {
-                holder.view.mNameView.text = mList[position]
+                holder.view.findViewById<TextView>(R.id.mNameView).text = mList[position]
             }
             is HeaderHolder -> {
-                holder.view.mContentView.text = mList[position]
+                holder.view.findViewById<TextView>(R.id.mContentView).text = mList[position]
             }
         }
     }

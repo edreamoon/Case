@@ -22,7 +22,7 @@
             android:name=".sdk.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".view.WidgetActivity"
+            android:name=".view.CoordinatorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
