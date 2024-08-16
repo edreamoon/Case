@@ -1,10 +1,12 @@
 package com.ccino.demo.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.ccino.demo.R
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
@@ -47,8 +49,10 @@ class CoordinatorActivity : AppCompatActivity() {
      * 2.需要和一个独立的兄弟"Nested Scroll View"配合使用(注意Nested Scroll 含义，支持滑动的View不一定是同层级，如此例被FrameLayout包裹但处理嵌套滑动的是RecyclerView),这样 AppBarLayout 才能知道什么时候开始滑动。
      * 3.Scrolling View 和 AppBarLayout 之间的关联，通过将 Scrolling View 的 Behavior 设为 AppBarLayout.ScrollingViewBehavior 来建立。
      */
+    @SuppressLint("MissingInflatedId")
     private fun coordinatorAndAppBar() {
         setContentView(R.layout.activity_coordinator_appbar)
+        findViewById<ViewPager2>(R.id.bannerPager).adapter = BannerAdapter()
         /*1. setScrollFlags()  or xml: app:layout_scrollFlags="scroll"
          val params = toolBar.layoutParams as AppBarLayout.LayoutParams
          params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL*/

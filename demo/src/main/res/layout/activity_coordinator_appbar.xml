@@ -5,6 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:ignore="MissingConstraints">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -12,12 +13,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/toolBar"
+<!--        android:minHeight="100dp" 这个影响滑动的区域-->
+        <com.ccino.demo.view.NestedScrollableHost
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:minHeight="100dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/bannerPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                tools:layout_height="200dp" />
+        </com.ccino.demo.view.NestedScrollableHost>
 
         <TextView
             android:layout_width="match_parent"
