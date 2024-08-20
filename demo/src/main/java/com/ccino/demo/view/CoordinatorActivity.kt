@@ -6,7 +6,6 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.ccino.demo.R
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
@@ -52,7 +51,7 @@ class CoordinatorActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     private fun coordinatorAndAppBar() {
         setContentView(R.layout.activity_coordinator_appbar)
-        findViewById<ViewPager2>(R.id.bannerPager).adapter = BannerAdapter()
+//        findViewById<ViewPager2>(R.id.bannerPager).adapter = BannerAdapter()
         /*1. setScrollFlags()  or xml: app:layout_scrollFlags="scroll"
          val params = toolBar.layoutParams as AppBarLayout.LayoutParams
          params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL*/

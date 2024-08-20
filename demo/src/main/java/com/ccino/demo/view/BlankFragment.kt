@@ -2,9 +2,7 @@ package com.ccino.demo.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -41,25 +39,6 @@ class BlankFragment : Fragment() {
     private fun coordinatorAndAppBar() {
 
         val pager2 = view?.findViewById<ViewPager2>(R.id.bannerPager)!!
-        (pager2.getChildAt(0) as RecyclerView).requestDisallowInterceptTouchEvent(true)
-
-        pager2.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    Log.d("ccino", "init: down")
-                    // 当触摸开始时，告知父 ViewPager2 不要拦截事件
-                    v.parent.requestDisallowInterceptTouchEvent(true)
-                }
-
-                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                    // 当触摸结束时，允许父 ViewPager2 拦截事件
-                    Log.d("ccino", "init: up")
-                    v.parent.requestDisallowInterceptTouchEvent(false)
-                }
-            }
-            v.onTouchEvent(event)
-            true
-        }
 
         pager2?.adapter = BannerAdapter()
         /*1. setScrollFlags()  or xml: app:layout_scrollFlags="scroll"
@@ -109,7 +88,6 @@ class BlankFragment : Fragment() {
         adapter.setData(list)
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView?.adapter = adapter
-        recyclerView?.requestDisallowInterceptTouchEvent(false)
     }
 
     override fun onCreateView(

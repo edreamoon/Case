@@ -14,10 +14,9 @@
         android:layout_height="wrap_content">
 
 <!--        android:minHeight="100dp" 这个影响滑动的区域-->
-        <com.ccino.demo.view.NestedScrollableHost
+        <com.ccino.demo.view.NestedScrollableHost2
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:minHeight="100dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <androidx.viewpager2.widget.ViewPager2
@@ -27,7 +26,7 @@
                 android:background="@color/white"
                 android:orientation="horizontal"
                 tools:layout_height="200dp" />
-        </com.ccino.demo.view.NestedScrollableHost>
+        </com.ccino.demo.view.NestedScrollableHost2>
 
         <TextView
             android:layout_width="match_parent"

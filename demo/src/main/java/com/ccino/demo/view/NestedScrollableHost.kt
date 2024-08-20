@@ -68,7 +68,7 @@ class NestedScrollableHost : FrameLayout {
     }
 
     override fun onInterceptTouchEvent(e: MotionEvent): Boolean {
-        handleInterceptTouchEvent(e)
+//        handleInterceptTouchEvent(e)
         return super.onInterceptTouchEvent(e)
     }
 
