@@ -95,11 +95,22 @@ class FlowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFlowBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         binding.lifecycleView.setOnClickListener { callback() }
+
+        val originalText = "<p>\nHello, World!</p>\n\nThis is </sc>a <b>test.\n\n</p>"
+        val cleanedText = cleanText(originalText)
+        Log.d(TAG, "onCreate: $cleanedText")
 
     }
 
+    fun cleanText(text: String): String {
+        // 使用正则表达式去除类似 <xxx> 和 </xxx> 的标签
+        val cleanedText = text.replace(Regex("<[^>]*>"), "")
 
+        // 去除首尾的换行符
+        return cleanedText.trim()
+    }
     private fun textWatcherFlow(): Flow<String> = callbackFlow {
         binding.root.postDelayed({
             for (i in 0..20) {

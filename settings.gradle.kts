@@ -23,3 +23,4 @@ rootProject.name = "Warehouse"
 //include(":app")
 include(":demo")
 include(":kspDemo")
+include(":todo")

@@ -43,54 +43,41 @@
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/blurView" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mb normal"
-        android:textAllCaps="false"
-        app:layout_constraintStart_toEndOf="@id/blurView" />
+    <!--
+    - app 主题必须是 Material3 相关的主题，否则会 crash.
+    - 不指定宽高会有默认 minW、minH，所以注意 wrap_content 的尺寸处理
+    - insetTop、insetBottom 去除外边距: 不然border上下边缘会有边距
+    - backgroundTint 设置背景颜色
+    - iconTint="@null" 去除icon tint，默认有颜色
 
-    <!--    padding 为0 去除各种内边距-->
-    <!--    insetTop、insetBottom 去除外边距-->
-    <!--    app:backgroundTint 设置背景颜色
-            app:iconTint="@null" 去除icon tint
     -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mb2"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:iconTint="@null"
-        android:padding="0dp"
-        android:text="icon/corner/stroke"
-        android:textAllCaps="false"
-        app:backgroundTint="@color/black"
-        app:cornerRadius="5dp"
-        app:icon="@mipmap/ic_launcher"
-        app:iconGravity="textStart"
-        app:iconPadding="2dp"
-        app:layout_constraintStart_toEndOf="@id/mb1"
-        app:strokeColor="@color/teal_200"
-        app:strokeWidth="2dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:padding="0dp"
-        android:text="text"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingStart="25dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="25dp"
+        android:paddingBottom="10dp"
+        android:text="tt"
         android:textAllCaps="false"
+        android:theme="@style/Theme.Material3.Light"
         app:backgroundTint="@color/black"
-        app:layout_constraintStart_toStartOf="@id/mb1"
-        app:layout_constraintTop_toBottomOf="@id/mb1"
-        app:strokeColor="@color/white"
-        app:strokeWidth="2dp" />
+        app:cornerRadius="20dp"
+        app:icon="@mipmap/ic_launcher"
+        app:iconGravity="textStart"
+        app:iconPadding="2dp"
+        app:iconSize="15dp"
+        app:iconTint="@null"
+        app:layout_constraintStart_toEndOf="@id/blurView"
+        app:rippleColor="@null"
+        app:strokeColor="@color/teal_200"
+        app:strokeWidth="1dp" />
 
     <com.ccino.demo.view.ColorChangingDotsView
         android:id="@+id/dot_view"
@@ -112,17 +99,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/dialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dialog" />
 
     <EditText
 
-        android:background="@color/teal_700"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,8 +16,6 @@ class WidgetActivity : AppCompatActivity() {
         setContentView(binding.root)
         blurView()
         binding.heartFillView.setProgress(0.1f)
-        binding.mb3.setOnClickListener { binding.heartFillView.setProgress(-1f) }
-        binding.mb1.setOnClickListener { binding.heartFillView.setProgress(0f) }
         binding.mb2.setOnClickListener { binding.heartFillView.setProgress(0.5f) }
     }
 
