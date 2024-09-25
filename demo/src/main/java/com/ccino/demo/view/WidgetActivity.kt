@@ -17,6 +17,8 @@ class WidgetActivity : AppCompatActivity() {
         blurView()
         binding.heartFillView.setProgress(0.1f)
         binding.mb2.setOnClickListener { binding.heartFillView.setProgress(0.5f) }
+        binding.start.setOnClickListener { binding.loadingView.start() }
+        binding.end.setOnClickListener { binding.loadingView.end() }
     }
 
     private fun blurView() {
@@ -31,7 +33,5 @@ class WidgetActivity : AppCompatActivity() {
         binding.blurBg.outlineProvider = ViewOutlineProvider.BACKGROUND
         binding.blurBg.setClipToOutline(true)
 //        blurBgView.setupWith(rootView)
-        binding.dialog.setOnClickListener {
-        }
     }
 }

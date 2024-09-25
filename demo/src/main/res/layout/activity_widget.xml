@@ -107,4 +107,28 @@
         android:background="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+
+    <com.ccino.demo.view.InspireLoading
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start"
+        app:layout_constraintTop_toBottomOf="@id/loading_view" />
+
+    <Button
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="end"
+        app:layout_constraintStart_toEndOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@id/loading_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
