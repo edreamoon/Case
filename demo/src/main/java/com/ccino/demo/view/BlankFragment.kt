@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.ccino.demo.R
 import com.google.android.material.appbar.AppBarLayout
-import com.ware.widget.recycler.MoreAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

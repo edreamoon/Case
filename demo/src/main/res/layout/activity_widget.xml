@@ -9,6 +9,14 @@
     tools:context=".view.WidgetActivity"
     tools:ignore="MissingConstraints">
 
+    <com.ccino.demo.view.SimpleMoreRecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,19 +87,19 @@
         app:strokeColor="@color/teal_200"
         app:strokeWidth="1dp" />
 
-    <com.ccino.demo.view.ColorChangingDotsView
-        android:id="@+id/dot_view"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@id/bg_blur_view" />
+    <!--    <com.ccino.demo.view.ColorChangingDotsView-->
+    <!--        android:id="@+id/dot_view"-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/bg_blur_view" />-->
 
-    <com.ccino.demo.widget.HeartFillView
-        android:id="@+id/heartFillView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <com.ccino.demo.widget.HeartFillView-->
+    <!--        android:id="@+id/heartFillView"-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.ccino.demo.widget.VerticalDashedLineView
         android:layout_width="10dp"
@@ -100,19 +108,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <EditText
-
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/teal_700"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-
     <com.ccino.demo.view.InspireLoading
         android:id="@+id/loading_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -131,4 +130,35 @@
         app:layout_constraintStart_toEndOf="@id/start"
         app:layout_constraintTop_toBottomOf="@id/loading_view" />
 
+
+    <com.ccino.demo.view.StoryBgView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/shapeableImageView"
+        android:src="@drawable/gc_girl"
+        android:scaleType="centerCrop"
+        android:layout_width="300px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:contentPaddingEnd="@dimen/video_info_padding_end"
+        android:layout_height="450px" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:src="@drawable/gc_girl"
+        android:scaleType="centerCrop"
+        android:layout_width="300px"
+        app:layout_constraintStart_toEndOf="@id/shapeableImageView"
+        android:layout_marginStart="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:contentPaddingEnd="@dimen/video_info_padding_end"
+        android:layout_height="450px" />
 </androidx.constraintlayout.widget.ConstraintLayout>

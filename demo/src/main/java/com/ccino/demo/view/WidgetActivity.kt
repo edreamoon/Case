@@ -6,6 +6,7 @@ import android.view.ViewOutlineProvider
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.ccino.demo.databinding.ActivityWidgetBinding
+import com.google.android.material.shape.ShapeAppearanceModel
 
 class WidgetActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWidgetBinding
@@ -15,10 +16,24 @@ class WidgetActivity : AppCompatActivity() {
         binding = ActivityWidgetBinding.inflate(layoutInflater)
         setContentView(binding.root)
         blurView()
-        binding.heartFillView.setProgress(0.1f)
-        binding.mb2.setOnClickListener { binding.heartFillView.setProgress(0.5f) }
+//        binding.heartFillView.setProgress(0.1f)
+//        binding.mb2.setOnClickListener { binding.heartFillView.setProgress(0.5f) }
         binding.start.setOnClickListener { binding.loadingView.start() }
         binding.end.setOnClickListener { binding.loadingView.end() }
+        val list = mutableListOf<String>()
+        for (i in 1..20) {
+            list.add(i.toString())
+        }
+        val adapter = MoreAdapter(this, false)
+        adapter.setData(list)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.postDelayed({binding.recyclerView.setNoMore()},2000)
+        val shapeAppearanceModel = ShapeAppearanceModel.builder()
+            .setTopRightCorner(ParallelogramShape())
+            .build()
+
+        // 应用到 ShapeableImageView
+        binding.shapeableImageView.shapeAppearanceModel = shapeAppearanceModel
     }
 
     private fun blurView() {

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ccino.demo.R
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.snackbar.Snackbar
-import com.ware.widget.recycler.MoreAdapter
 
 /**
  * https://www.jianshu.com/p/7caa5f4f49bd

@@ -29,4 +29,12 @@
     <declare-styleable name="BlurView">
         <attr name="blurOverlayColor" format="color"/>
     </declare-styleable>
+
+    <style name="HexagonStyle">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeTopRight">0%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+
 </resources>

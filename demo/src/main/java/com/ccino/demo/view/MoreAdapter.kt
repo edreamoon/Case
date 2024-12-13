@@ -1,4 +1,4 @@
-package com.ware.widget.recycler
+package com.ccino.demo.view
 
 import android.content.Context
 import android.view.LayoutInflater
