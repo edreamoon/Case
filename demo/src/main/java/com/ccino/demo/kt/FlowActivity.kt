@@ -97,11 +97,52 @@ class FlowActivity : AppCompatActivity() {
         binding = ActivityFlowBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.lifecycleView.setOnClickListener { callback() }
+        lifecycleScope.launch {
+            sharedFlow.collect {
+                Log.d(TAG, "callOrder: shareFlow=$it")
+            }
+        }
 
         val originalText = "<p>\nHello, World!</p>\n\nThis is </sc>a <b>test.\n\n</p>"
         val cleanedText = cleanText(originalText)
         Log.d(TAG, "onCreate: $cleanedText")
+        binding.completeView.setOnClickListener { callOrder() }
+    }
 
+    private val sharedFlow = MutableSharedFlow<Int>()
+
+    private val max = 200
+    fun messageFlow(): Flow<Int> = callbackFlow {
+        for (i in 0..max) {
+            delay(20)
+            trySend(i)
+        }
+        awaitClose { Log.d(TAG, "messageFlow: awaitClose") }
+    }
+
+    private suspend fun flow() = coroutineScope {
+        messageFlow()
+            .buffer(Int.MAX_VALUE)// 如果不加buffer，比较多时会出现数据丢失
+            .onEach {
+                if (it == max) {
+                    sharedFlow.emit(it)
+                }
+            }
+            .onCompletion {
+                Log.d(TAG, "flow: onCompletion")
+            }
+            .filterNot { it == max || it == 4 }
+
+    }
+
+    private var job: Job? = null
+    private fun callOrder() {
+        job?.cancel()
+        job = lifecycleScope.launch {
+            flow().collect {
+                Log.d(TAG, "callOrder: collect $it")
+            }
+        }
     }
 
     fun cleanText(text: String): String {
@@ -111,6 +152,7 @@ class FlowActivity : AppCompatActivity() {
         // 去除首尾的换行符
         return cleanedText.trim()
     }
+
     private fun textWatcherFlow(): Flow<String> = callbackFlow {
         binding.root.postDelayed({
             for (i in 0..20) {

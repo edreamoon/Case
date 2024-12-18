@@ -13,6 +13,12 @@
         style="@style/DefaultTv"
         android:text="生命周期绑定" />
 
+    <TextView
+        android:id="@+id/complete_view"
+        style="@style/DefaultTv"
+        app:layout_constraintStart_toEndOf="@id/lifecycle_view"
+        android:text="调用顺序" />
+
     <EditText
         app:layout_constraintTop_toBottomOf="@id/lifecycle_view"
         android:id="@+id/edit_view"
