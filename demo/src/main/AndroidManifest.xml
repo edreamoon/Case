@@ -32,7 +32,7 @@
 <!--        </activity> -->
 
         <activity
-            android:name=".kt.FlowActivity"
+            android:name=".sdk.KeyboardActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenLayout"
             android:exported="true">
