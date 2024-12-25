@@ -37,4 +37,10 @@
         <item name="cornerSizeBottomRight">50%</item>
     </style>
 
+    <declare-styleable name="GradientView">
+        <attr name="gradientColors" format="reference" />
+        <attr name="gradientPositions" format="reference" />
+        <attr name="gradientAngle" format="float" />
+    </declare-styleable>
+
 </resources>

@@ -21,4 +21,16 @@
     <color name="light_blue_600">#FF039BE5</color>
     <color name="gray_400">#FFBDBDBD</color>
     <color name="gray_600">#FF757575</color>
+
+    <array name="gradientColors">
+        <item>@android:color/holo_red_light</item>
+        <item>@android:color/holo_green_light</item>
+        <item>@android:color/holo_blue_light</item>
+    </array>
+
+    <array name="gradientPositions">
+        <item>0.0</item>
+        <item>0.5</item>
+        <item>1.0</item>
+    </array>
 </resources>
