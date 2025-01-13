@@ -34,7 +34,7 @@
 <!--        </activity> -->
 
         <activity
-            android:name=".view.WidgetActivity"
+            android:name=".view.ConstraintActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenLayout"
             android:exported="true">

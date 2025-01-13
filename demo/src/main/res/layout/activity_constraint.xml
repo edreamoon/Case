@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context=".view.WidgetActivity"
+    tools:ignore="MissingConstraints">
+
+    <!-- <androidx.constraintlayout.helper.widget.Layer
+         android:id="@+id/layer"
+         app:constraint_referenced_ids="filter_view,ori_view"
+         android:layout_width="wrap_content"
+         android:background="@color/teal_700"
+         android:layout_marginStart="10dp"
+         android:paddingBottom="10dp"
+         android:paddingTop="10dp"
+         android:paddingStart="10dp"
+         android:paddingEnd="10dp"
+         android:layout_height="wrap_content" />-->
+
+    <!--    <com.ccino.demo.view.ConstraintCustHelper-->
+    <!--        android:id="@+id/layer"-->
+    <!--        app:constraint_referenced_ids="filter_view,ori_view"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:background="@color/teal_700"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:paddingBottom="10dp"-->
+    <!--        android:paddingTop="10dp"-->
+    <!--        android:paddingStart="10dp"-->
+    <!--        android:paddingEnd="10dp"-->
+    <!--        android:layout_height="wrap_content" />-->
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ori_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bit" />
+
+    <!--
+    Saturation (饱和度)：调整图像颜色的饱和度，1.0 表示不改变，0.1 将图像近乎去色，而 2.0 表示更高的饱和度。可以通过设置不同饱和度实现黑白效果或增强色彩鲜艳度。
+    Brightness (亮度)：设置图像的亮度，1.0 为原亮度，2.0 增加亮度，0.5 则会暗化。适用于图片需要调整亮度的场景，比如在较暗环境下提升可见度。
+    Contrast (对比度)：调节图像的对比度，1.0 为默认，值越大对比越强。适合需要增强对比的场景，让图像细节更清晰。
+    Warmth (色温)：控制图像的冷暖色调，1.0 表示原色温，低于 1.0 使图像偏冷色，高于 1.0 偏暖色。适合营造冷暖色调效果，如模拟日出或夕阳光照。
+    Round (圆角)：设置图像的圆角半径，以像素为单位，使边角更平滑。适用于给图像加圆角处理，常用于头像展示等场景。
+    Round Percent (百分比圆角)：设置圆角程度的百分比，1.0f 表示完全圆形。用于制作圆形头像显示效果，适合于需要完美圆形的场景。
+    AltSrc (备用图像)：设置备用图像，并通过 crossfade 控制 src 和 altSrc 混合程度，比如crossfade = 0.5f 表示主图与备用图各占 50%。适合做图像淡入淡出效果，或者不同滤镜组合的效果。代码示例：
+
+
+    Overlay (叠加图像)：在图像上叠加一个图层，用于应用更多视觉效果。适合需要叠加水印、阴影等效果的场景。
+    ImageRotate (旋转)：旋转图像，单位为度，比如90f 表示顺时针旋转 90 度。用于图片旋转需求，例如左右旋转或倒置图像。
+    ImageZoom (缩放)：缩放图像(不缩放view)，1.0 表示正常大小，0.5 为宽高缩小一半。适合缩放需求的场景，比如局部放大效果。-->
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/filter_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bit"
+        app:altSrc="@drawable/gc_girl"
+        app:crossfade="0.4"
+        app:layout_constraintStart_toEndOf="@id/ori_view"
+        app:round="10dp"
+        app:saturation="0" />
+
+    <!-- 基线对齐，针对 textview 的基线-->
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv1"
+        app:layout_constraintStart_toEndOf="@id/tv1" />
+
+    <TextView
+        android:id="@+id/At"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/Ac"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:background="@color/holo_green_dark"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/teal_700"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Placeholder
+        android:id="@+id/holder"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/A"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/gray_600"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/B"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/gray_600"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/C"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/gray_600"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/D"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/gray_600"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/E"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/gray_600"
+            android:gravity="center"
+            android:text="E"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="A,B,C,D,E"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
