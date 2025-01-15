@@ -34,7 +34,7 @@
 <!--        </activity> -->
 
         <activity
-            android:name=".view.transition.TransitionTwoActivity"
+            android:name=".view.constraint.MotionLayoutActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenLayout"
             android:exported="true">

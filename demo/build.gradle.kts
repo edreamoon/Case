@@ -81,6 +81,7 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.glide)
     implementation(libs.okhttp)
+    implementation(libs.exoplayer)
     implementation(libs.okhttp.logging)
 
     "ksp"(project(":kspDemo")) // 为了生成代码
