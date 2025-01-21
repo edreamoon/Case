@@ -34,7 +34,7 @@
 <!--        </activity> -->
 
         <activity
-            android:name=".view.constraint.MotionLayoutActivity"
+            android:name=".media.ExoPlayerActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="orientation|screenLayout"
             android:exported="true">
